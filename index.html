@@ -96,16 +96,18 @@
   <footer>
     Dicks out for Harambe
   </footer>
-
+  
   <script>
     const audio = document.getElementById('bg-music');
     const toggleBtn = document.getElementById('music-toggle-btn');
     const video = document.getElementById('video-bg');
-
+  
+    let playingForward = true;
+  
     function updateButton() {
       toggleBtn.textContent = audio.paused || audio.muted ? '🔇 Unmute' : '🔊 Pause';
     }
-
+  
     toggleBtn.addEventListener('click', () => {
       if (audio.muted || audio.paused) {
         audio.muted = false;
@@ -115,7 +117,7 @@
       }
       updateButton();
     });
-
+  
     window.addEventListener('click', () => {
       if (audio.muted) {
         audio.muted = false;
@@ -123,16 +125,41 @@
         updateButton();
       }
     }, { once: true });
-
+  
     updateButton();
-
-    // Load video after background image is done loading
+  
+    // Load video after image
     const bgImage = new Image();
     bgImage.src = 'harambe_in_the_clouds.png';
     bgImage.onload = () => {
       video.style.display = 'block';
+      video.play();
     };
+  
+    // Disable native loop, we handle it manually
+    video.loop = false;
+  
+    // When video ends playing forward, reverse it
+    video.addEventListener('ended', () => {
+      if (playingForward) {
+        video.playbackRate = -1;
+        video.currentTime = video.duration - 0.001; // Jump to end - tiny offset
+        video.play();
+        playingForward = false;
+      }
+    });
+  
+    // When video hits start while reversing, flip back
+    video.addEventListener('timeupdate', () => {
+      if (!playingForward && video.currentTime <= 0.01) {
+        video.playbackRate = 1;
+        video.currentTime = 0.001;
+        video.play();
+        playingForward = true;
+      }
+    });
   </script>
+
 
 </body>
 </html>
