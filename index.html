@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Zealand RV Trip Handbook</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #2980b9;
+            --background-color: #f9f9f9;
+            --highlight-color: #eaf6ff;
+            --border-radius: 10px;
+            --day-bg-color: linear-gradient(135deg, #fff5e1, #e1f7ff);
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 1rem;
+            background-color: var(--background-color);
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.3rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            margin-bottom: 0.2rem;
+        }
+
+        h4 {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+            margin: 0.5rem 0;
+            list-style-type: none;
+        }
+
+        ul.itinerary li {
+            display: grid;
+            grid-template-columns: 21ch 3ch 1fr minmax(0, 40ch);
+            align-items: start;
+            column-gap: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        ul.itinerary li .time {
+          color: var(--accent-color);
+          font-weight: bold;
+          background-color: var(--highlight-color);
+          padding: 0.1rem 0.4rem;
+          border-radius: 4px;
+          display: inline-block; /* Ensures the background wraps only the text */
+          margin: 0; /* Reset any margin that might extend the background */
+        }
+
+
+        ul.itinerary li .separator {
+            grid-column: 2;
+            text-align: center;
+        }
+
+        ul.itinerary li .desc {
+            grid-column: 3;
+        }
+
+        ul.itinerary li .weather {
+            grid-column: 4;
+            max-width: 40ch;
+            max-height: 1rem;
+        }
+
+        .day {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            background: var(--day-bg-color);
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .day:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .collapsible {
+            background-color: var(--accent-color);
+            color: white;
+            cursor: pointer;
+            padding: 0.75rem 1rem;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1rem;
+            margin-top: 1.2rem;
+            border-radius: var(--border-radius);
+            transition: background-color 0.2s ease;
+        }
+
+        .collapsible:hover {
+            background-color: #1f6ca2;
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            float: right;
+            font-weight: bold;
+        }
+
+        .collapsible.active:after {
+            content: "\2212";
+        }
+
+        .content {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: white;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        @media (max-width: 768px) {
+            .day {
+                padding: 0.8rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.25rem;
+            }
+            h3 {
+                font-size: 1rem;
+            }
+            ul.itinerary li {
+                display: block;
+            }
+            ul.itinerary li .time,
+            ul.itinerary li .separator,
+            ul.itinerary li .desc {
+                display: block;
+                margin-bottom: 0.2rem;
+            }
+            ul.itinerary li .separator {
+                margin-bottom: 0;
+            }
+            }
+    </style>
+</head>
+
+<body>
+    <h1>New Zealand RV Trip Handbook</h1>
+    <p><strong>Trip Dates:</strong> April 13, 2025 - April 20, 2025</p>
+    <p><strong>Total Days:</strong> 6 full days + 2 partial days</p>
+    <p><strong>Daylight Hours:</strong> Approximately 6:30 AM to 5:30 PM</p>
+
+    <h2>Day-by-Day Itinerary</h2>
+    
+    <!-- Day 1 -->
+    <button class="collapsible">Day 1 (April 13, 2025 - Sun): Auckland to Rotorua</button>
+    <div class="content">
+        <div class='day'>
+            <h4><a href="https://maps.app.goo.gl/hD4FT36pBjMKaH3z8">Driving map: https://maps.app.goo.gl/hD4FT36pBjMKaH3z8</a></h4>
+            <ul class="itinerary">
+                <li><span class="time">9:00 AM</span><span class="separator"> - </span><span class="desc">Pick up RV in Auckland</span><span class="weather" data-lat="-36.8485" data-lng="174.7635"></span></li>
+                <li><span class="time">9:00 AM - 11:00 AM</span><span class="separator"> - </span><span class="desc">Drive to Shires Rest (<a href="https://maps.app.goo.gl/EHBWZ1hfo93cNmaRA">maps</a>)</span></li>
+                <li><span class="time">1:50 PM - 4:20 PM</span><span class="separator"> - </span><span class="desc">Hobbiton Tour (~2.5 hours)</span></li>
+                <li><span class="time">4:30 PM - 5:30 PM</span><span class="separator"> - </span><span class="desc">Drive to Rotorua (~1 hour)</span></li>
+                <li><span class="time">6:20 PM - 7:20 PM</span><span class="separator"> - </span><span class="desc">Redwoods Tree Walk (1 hour)</span></li>
+                <li><span class="time">7:30 PM - 8:30 PM</span><span class="separator"> - </span><span class="desc">Drive to Huka Falls area (1 hour)<br>Staying at Coddiwample</span></li>
+                <li><span class="time">?</span><span class="separator"> - </span><span class="desc">Setup campsite</span></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Day 2 -->
+    <button class="collapsible">Day 2 (April 14, 2025 - Mon): Lake Taupo to Vinegar Hill Campground</button>
+    <div class="content">
+      <div class="day">
+        <h4><a href="https://maps.app.goo.gl/CKTtXdjkcWqDUdyZA" target="_blank">Google Maps Route</a></h4>
+        <ul class="itinerary">
+          <li><span class="time">8:00 AM - 10:00 AM</span><span class="separator"> - </span><span class="desc">Plan on starting from near Lake Taupo</span></li>
+          <li><span class="time">10:00 AM - 10:10 AM</span><span class="separator"> - </span><span class="desc">Drive to Huka Falls Lookout (10 mins)</span></li>
+          <li><span class="time">10:15 AM - 11:00 AM</span><span class="separator"> - </span><span class="desc">Explore Huka Falls</span></li>
+          <li><span class="time">11:00 AM - 11:10 PM</span><span class="separator"> - </span><span class="desc">Drive to Spa Thermal Park (~10 minutes)</span></li>
+          <li><span class="time">11:10 PM - 11:45 PM</span><span class="separator"> - </span><span class="desc">Explore Spa Thermal Park</span></li>
+          <div class="note">Optional Stops:</div>
+          <div class="note">
+            <ul>
+              <li>Te Pōporo / Bulli Point</li>
+              <li>Waitetoko Beach</li>
+              <li>Maraetai Bay Scenic Lookout</li>
+              <li>Tongariro River Trail</li>
+              <li>Te Ponanga Saddle View Point</li>
+              <li>Lake Rotopounamu (20min or 2hr hike)</li>
+              <li>Opotaka</li>
+              <li>Ketetahi Falls (?)</li>
+              <li>Te Porere Redoubt</li>
+            </ul>
+          </div>
+          <div><b>Visit Mount Ngauruhoe viewpoint</b></div>
+          <li><span class="time">11:45 AM - 1:30 PM</span><span class="separator"> - </span><span class="desc">Drive to Mangatepopo Road End (~1.75 hours)</span></li>
+          <li><span class="time">2:00 PM - 4:00 PM</span><span class="separator"> - </span><span class="desc">Hike to Soda Springs (2 hour RT)</span></li>
+          <li><span class="time">4:00 PM - 4:20 PM</span><span class="separator"> - </span><span class="desc">Drive to Taranaki Falls trailhead (0.25 hours)</span></li>
+          <div class="note">Stop at Mahuia Rapids along the way</div>
+          <li><span class="time">4:20 PM - 6:20 PM</span><span class="separator"> - </span><span class="desc">Hike Taranaki Falls Track (~1.5 to 2 hours)</span></li>
+          <li><span class="time">? - ?</span><span class="separator"> - </span><span class="desc">Tawhai Falls (Gollum's Pool)</span></li>
+          <li><span class="time">6:25 PM - 7:25 PM</span><span class="separator"> - </span><span class="desc">>Drive to Mangawhero Falls (~1 hour)</span></li>
+          <li><span class="time">7:25 PM - 7:35 PM</span><span class="separator"> - </span><span class="desc">Hike to Mangawhero Falls (~10 minutes)</span></li>
+          <li><span class="time">7:35 PM - 9:00 PM</span><span class="separator"> - </span><span class="desc">Drive to <a href="https://www.mdc.govt.nz/services/parks-and-public-spaces/camping-grounds/putai-ngahere-domain-vinegar-hill">Vinegar Hill Campground</a> - Putai Ngahere Domain (1.5 hours)</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <button class="collapsible">Day 3 (April 15, 2025 - Tue): Vinegar Hill Campground to Puhi Puhi DOC Campground</button>
+    <div class="content">
+      <div class="day">
+        <h4>Route Overview</h4>
+        <p><strong>!!! MUST BE AT WELLINGTON INTERISLAND FERRY BEFORE 12pm</strong></p>
+        <ul class="itinerary">
+          <li><span class="time">6:00 AM - 9:00 AM</span><span class="separator"> - </span><span class="desc">Drive to Wellington (~2.5 hours)</span></li>
+          <li><span class="time">9:00 AM - 10:30 AM</span><span class="separator"> - </span><span class="desc">Weta Cave Store for Tour (1.5 hours)</span></li>
+          <li><span class="time">11:00 AM - 12:00 PM</span><span class="separator"> - </span><span class="desc">Check in for Interislander ferry</span></li>
+          <li><span class="time">1:00 PM - 4:30 PM</span><span class="separator"> - </span><span class="desc">Ferry crossing to Picton (~3.5 hours)</span><span class="weather" data-lat="-41.28882806181876" data-lng="174.00121153441142" data-date="2025-04-15"></span></li>
+          <li><span class="time">4:30 PM - 5:00 PM</span><span class="separator"> - </span><span class="desc">Drive to Blenheim (0.5 hour)</span></li>
+          <li><span class="time">4:30 PM - 6:30 PM</span><span class="separator"> - </span><span class="desc"><a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/puhi-puhi-scenic-reserve/things-to-do/campsites/puhi-puhi-campsite/">Puhi Puhi DOC Campground</a>, confirmation # 5968166, transaction # 510011074492</span></li>
+          <li><span class="time">7:00 PM</span><span class="separator"> - </span><span class="desc">Set up at campsite for overnight stay</span><span class="weather" data-lat="-42.2702" data-lng="173.7378" data-date="2025-04-15"></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <button class="collapsible">Day 4 (April 16, 2025 - Wed): Puhi Puhi to Lake Pukaki</button>
+    <div class="content">
+      <div class="day">
+        <h4>Route Map: <a href="https://maps.app.goo.gl/1VMd1heFzXcYF5ox8" target="_blank">Google Maps Link</a></h4>
+        <ul class="itinerary">
+          <li><span class="time">6:30 AM - 7:00 AM</span><span class="separator"> - </span><span class="desc">(Puhi Puhi Campground) - Drive to Kaikoura Peninsula Walkway (~30 mins)</span><span class="weather" data-lat="-42.2702" data-lng="173.7378" data-date="2025-04-16"></span></li>
+            <div class="note">
+                ~15 walk out to see seals
+            </div>
+          <li><span class="time">9:00 AM - 2:30 PM</span><span class="separator"> - </span><span class="desc">Drive to Lake Tekapo (~5.5 hours)</span><span class="weather" data-lat="-44.0039" data-lng="170.4836" data-date="2025-04-16"></span></li>
+          <div class="note">
+            &nbsp&nbsp&nbsp- &nbsp<strong>May want to go to Hanmer Springs instead of Tekapo. Adds ~1 hour drive</strong>
+          </div>
+          <div class="note"><strong>Via Christchurch to Mayfield</strong></div>
+          <div class="note">
+              - Okarahia Viaduct - 25 min detour + hike<br>
+              - Charles Wiffen Wines Limited<br>
+              - Tormore Strait<br>
+              - The Crater Rim (vineyard)<br>
+              - Black Estates Wine<br>
+              - Waipara Springs Winery<br>
+              - Greystone Wines<br>
+              - Torlesse Wines<br>
+              - Weka Pass Station<br>
+              - Pegasus Bay (winery)<br>
+              - Willowbank Wildlife Reserve<br>
+              - Broadfields New Zealand Landscape Garden<br>
+          </div>
+          <div class="note">
+            <strong>Via mountain route (TBD)</strong>
+              - <br>
+              - Coalgate Millenium Walkway<br>
+              - Washpen Falls<br>
+              - Rakaia Gorge Walkway<br>
+              - Glentui Falls<br>
+              - Acland Falls (if recent rain)<br>
+              - Route 79 Mueseum<br>
+              - Kakahu Track<br>
+              - Fairlie Heritage Museum (has food)<br>
+              - Burkes Pass (antiques)<br>
+          </div>
+          <li><span class="time">2:45 PM - 3:00 PM</span><span class="separator"> - </span><span class="desc">Visit Church of the Good Shepherd + lunch</span></li>
+          <li><span class="time">3:00 PM - TBD</span><span class="separator"> - </span><span class="desc">Tekapo Springs</span></li>
+          <li><span class="time">4:30 PM - 5:30 PM</span><span class="separator"> - </span><span class="desc">Drive to <a href="https://campermate.com/en/location/new-zealand/can/mackenzie/paid-campground/glentanner-holiday-park-mount-cook/451a6755-de40-48c3-bb6a-0d74cf479869">Glentanner Park</a>/Mt Cook (~1 hour), already booked</a></span><span class="weather" data-lat="-43.91449350587906" data-lng="170.1218288849692" data-date="2025-04-16"></span></li>
+          <li><span class="time">5:30 or 6 PM</span><span class="separator"> - </span><span class="desc">Set campsite</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Day 5 -->
+    <button class="collapsible">Day 5 (April 17, 2025 - Thu): Mount Cook to Isengard (Glenorchy)</button>
+    <div class="content">
+      <div class="day">
+        <h4>Route Map: <a href="https://maps.app.goo.gl/rPyGfah8bc5BfPYB6" target="_blank">Google Maps Link</a></h4>
+        <ul class="itinerary">
+          <li><span class="time">6:30 AM - 7:00 AM</span><span class="separator"> - </span><span class="desc">Glentanner Park to Tasman (~25 mins)</span><span class="weather" data-lat="-43.91449350587906" data-lng="170.1218288849692" data-date="2025-04-17"></span></li>
+          <li><span class="time">7:00 AM - 7:30 AM</span><span class="separator"> - </span><span class="desc">Tasman Glacier Hike (~30 mins)</span><span class="weather" data-lat="-43.698017234626995" data-lng="170.16298026413924" data-date="2025-04-17"></span></li>
+          <li><span class="time">7:30 AM - 1:30 PM</span><span class="separator"> - </span><span class="desc">Hike Hooker Valley Track (~3 to 4 hours)</span><span class="weather" data-lat="-43.68898376850004" data-lng="170.10418137552807" data-date="2025-04-17"></span></li>
+          <li><span class="time">11:30 PM - 1:00 PM</span><span class="separator"> - </span><span class="desc">Drive to Lindis Pass (~1.5 hours)</span></li>
+          <li><span class="time">1:30 PM - 4:00 PM</span><span class="separator"> - </span><span class="desc">Drive to Glenorchy (~2.5 hours)</span></li>
+          <li><span class="time">4:00 PM - 4:30 PM</span><span class="separator"> - </span><span class="desc">Dan's Paddock (Gandalf's Approach to Isengard) (~35 mins)</span><span class="weather" data-lat="-44.67363985963711" data-lng="168.34093926733937" data-date="2025-04-17"></span></li>
+          <div class="note"><strong>Drives past:</strong></div>
+          <div class="note">
+              - The Road to Paradise<br>
+              - Lothlórien (LOTR)<br>
+              - Paradise Trust<br><br>
+          </div>
+          <li><span class="time">4:30 PM - 5:00 PM</span><span class="separator"> - </span><span class="desc">Drive to Isengard Lookout (~30 mins)</span></li>
+          <li><span class="time">5:00 PM - 5:45 PM</span><span class="separator"> - </span><span class="desc">Camp in Queenstown (~45 mins)</span></li>
+          <li><span class="time">6:00 PM</span><span class="separator"> - </span><span class="desc"><a href="https://maps.google.com/maps/dir//Queenstown+Holiday+Park+Creeksyde+54+Robins+Road+Queenstown+9300+New+Zealand/@-45.0257711,168.6604495,13z/data=!4m5!4m4!1m0!1m2!1m1!1s0xa9d51d9d28991bf9:0xa11d333b257f5af6">Creeksyde</a>, <a href="https://fbs.ibexres.com/production/queensto52/fbs533.html?bc=6939#/confirmation/26868343">Booking ID: 154887</a>, Ref: 36929754 / 4859dcd6a93e40f3351a, </span><span class="weather" data-lat="-45.02584690120951" data-lng="168.66048168270513" data-date="2025-04-17"></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Day 6 -->
+    <button class="collapsible">Day 6 (April 18, 2025 - Fri): Glenorchy to Picton</button>
+    <div class="content">
+      <div class="day">
+        <h4>Route Map: <a href="https://maps.app.goo.gl/Ah3Wxxa2t9gUMs2u8" target="_blank">Google Maps Link</a></h4>
+        <ul class="itinerary">
+          <li><span class="time">8:00 AM</span><span class="separator"> - </span><span class="desc">Start in Queenstown</span><span class="weather" data-lat="-45.02584690120951" data-lng="168.66048168270513" data-date="2025-04-18"></span></li>
+          <li><span class="time">8:00 AM - 11:00 AM</span><span class="separator"> - </span><span class="desc">Drive to Haast (~3 hours)</span></li>
+          <div class="note"><strong>Maybe Break:</strong> Haast Pass lookout<br>
+              - Thunder Creek Falls<br>
+              - <br>
+          </div>
+          <li><span class="time">11:00 AM - 1:00 PM</span><span class="separator"> - </span><span class="desc">Drive to Fox Glacier (~1.5 hours)</span><span class="weather" data-lat="-43.46264139780801" data-lng="170.00906334173715" data-date="2025-04-18"></span></li>
+          <div class="note"><strong>Drives past:</strong></div>
+          <div class="note">
+                - Lake Matheson jetty walk (~45 mins)</br>
+                - Fox Glacier Valley Walk (~1 hour)</br></br>
+          </div>
+          <li><span class="time">1:00 PM - 3:30 PM</span><span class="separator"> - </span><span class="desc">Drive to Greymouth (~2.5 hours)</span></li>
+          <li><span class="time">3:30 PM - 8:00 PM</span><span class="separator"> - </span><span class="desc">Drive to Picton (~4.5 hours)</span><span class="weather" data-lat="-41.28882806181876" data-lng="174.00121153441142" data-date="2025-04-18"></span></li>
+          <li><span class="time">8:30 PM</span><span class="separator"> - <span class="desc">Park and Sleep</span></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Day 7 -->
+    <button class="collapsible">Day 7 (April 19, 2025 - Sat): Picton to Taranaki</button>
+    <div class="content">
+      <div class="day">
+        <ul class="itinerary">
+          <div class="note"><strong>!!! MUST BE AT PICTON INTERISLAND FERRY BEFORE 6:00 AM</strong></div>
+            <li><span class="time">6:00 AM - 10:00 AM</span><span class="separator"> - </span><span class="desc">Picton to Wellington Ferry (~4 hours)</span><span class="weather" data-lat="-41.28882806181876" data-lng="174.00121153441142" data-date="2025-04-19"></li>
+          <li><span class="time">2:00 PM - 8:00 PM</span><span class="separator"> - </span><span class="desc">Drive to Taranaki (~5 hours)</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Day 8 -->
+    <button class="collapsible">Day 8 (April 20, 2025 - Sun): Taranaki to Auckland</button>
+    <div class="content">
+      <div class="day">
+        <ul class="itinerary">
+          <li><span class="time">2:00 PM - 8:00 PM</span><span class="separator"> - </span><span class="desc">Drive to Auckland (~5 hours)</span></li>
+          <li><span class="time">8:00 PM - 9:00 PM</span><span class="separator"> - </span><span class="desc">Clean and return RV</span></li>
+          <li><span class="time">9:00 PM onward</span><span class="separator"> - </span><span class="desc">Prepare for evening flight</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Flight Info</h2>
+    <ul>
+        <li>All times are local to location</li>
+        <li>NZ6408 - JAX->IAH - 4/11 - 5:00PM - 6:44PM</li>
+        <li>NZ29   - IAH->AKL - 4/11 - 9:55PM - 4/13 5:30AM</li>
+        <li>NZ28   - AKL->IAH - 4/20 - 7:40PM - 4:15PM</li>
+        <li>UA2864 - IAH->JAX - 4/20 - 6:05PM - 9:20PM</li>
+    </ul>
+
+    <h2>Travel Tips</h2>
+    <ul>
+        <li>Use Campermate, WikiCamps, or Roadtrip apps for campsite information.</li>
+        <li>Check local council and DOC websites for camping restrictions.</li>
+        <li>Follow Leave No Trace principles and the Tiaki Promise.</li>
+        <li>Carry warm, waterproof clothing for hikes and outdoor activities.</li>
+        <li>Plan fuel stops in advance, especially in remote areas.</li>
+        <li>Download offline maps before the trip.</li>
+        <li><s>Book Weta Workshop tour and ferry crossing in advance.</s> - Done</li>
+    </ul>
+
+    <h2>Maps and Resources</h2>
+    <p>Use Google Maps or offline navigation apps for detailed driving directions.</p>
+    <p>For more information on attractions, visit:
+        <ul>
+            <li><a href='https://www.lovetaupo.com'>Love Taupō</a></li>
+            <li><a href='https://www.doc.govt.nz'>Department of Conservation</a></li>
+            <li><a href='https://www.wetaworkshop.com'>Weta Workshop</a></li>
+            <li><a href='https://www.interislander.co.nz'>Interislander Ferry</a></li>
+            <s><li><a href='https://www.temanawa.co.nz'>Te Manawa Museum</a></li></s>
+            <li><a href='https://www.marlboroughwinenz.com'>Marlborough Wine Region</a></li>
+            <li><a href='https://glenorchyinfocentre.co.nz'>Glenorchy Information Centre</a></li>
+            <li><a href='https://www.paradisetrust.org.nz'>Paradise Trust</a></li>
+        </ul>
+    </p>
+    
+    <!-- Collapsing script -->
+<script>
+    const coll = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < coll.length; i++) {
+        const button = coll[i];
+        const content = button.nextElementSibling;
+
+        // Set initial state to expanded
+        content.style.maxHeight = content.scrollHeight + "px";
+        button.classList.add("active");
+
+        button.addEventListener("click", function () {
+            this.classList.toggle("active");
+
+            if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+                // Collapse
+                content.style.maxHeight = "0px";
+            } else {
+                // Expand
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+
+    <!-- Fetching weather script -->
+    <script>
+        const weatherAPIs = {
+            openMeteo: {
+                // https://api.open-meteo.com/v1/forecast?latitude=-37.8136&longitude=144.9631&daily=sunrise,sunset,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,daylight_duration,sunshine_duration,uv_index_max,precipitation_probability_max&models=gfs_seamless&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,precipitation,cloud_cover&timezone=Pacific%2FAuckland&wind_speed_unit=mph&precipitation_unit=inch&temperature_unit=fahrenheit
+                baseURL: "https://api.open-meteo.com/v1/forecast",
+                params: (latitude, longitude) => 
+                `?latitude=${latitude}&longitude=${longitude}&daily=sunrise,sunset,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,daylight_duration,sunshine_duration,uv_index_max,precipitation_probability_max&models=gfs_seamless&timezone=Pacific%2FAuckland&wind_speed_unit=mph&precipitation_unit=inch&temperature_unit=fahrenheit` // &current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,precipitation,cloud_cover
+            },
+            ambee: {
+                baseURL: "https://api.ambeedata.com/weather",
+                params: (latitude, longitude, date) => `?lat=${latitude}&lng=${longitude}&date=${date}`,
+                headers: {
+                    "Content-Type": "application/json",
+                    "x-api-key": "YOUR_AMBEE_API_KEY"
+                }
+            },
+            weatherbit: {
+                baseURL: "https://api.weatherbit.io/v2.0/forecast/daily",
+                params: (latitude, longitude) => `?lat=${latitude}&lon=${longitude}&key=YOUR_WEATHERBIT_API_KEY&days=7`,
+            }
+        };
+
+        async function fetchWeather(apiName, latitude, longitude, date = null) {
+            const apiConfig = weatherAPIs[apiName];
+            if (!apiConfig) {
+                throw new Error("API not supported");
+            }
+
+            const url = apiConfig.baseURL + apiConfig.params(latitude, longitude, date);
+            const options = {
+                method: 'GET',
+                headers: apiConfig.headers || {}
+            };
+
+            const response = await fetch(url, options);
+            if (!response.ok) {
+                throw new Error("Failed to fetch weather data");
+            }
+
+            return await response.json();
+        };
+
+        async function updateWeatherData() {
+            const weatherSpans = document.querySelectorAll('.weather');
+        
+            for (const span of weatherSpans) {
+                const latitude = span.getAttribute('data-lat');
+                const longitude = span.getAttribute('data-lng');
+        
+                try {
+                    const data = await fetchWeather('openMeteo', latitude, longitude);
+                    const dates = data.daily.time;
+                    const maxTemps = data.daily.temperature_2m_max;
+                    const minTemps = data.daily.temperature_2m_min;
+                    const sunrises = data.daily.sunrise;
+                    const sunsets = data.daily.sunset;
+                    const precipitation = data.daily.precipitation_probability_max;
+        
+                    // Construct dailyData array
+                    const dailyData = dates.map((dateStr, index) => {
+                        return {
+                            date: new Date(dateStr),
+                            sunrise: new Date(sunrises[index]),
+                            sunset: new Date(sunsets[index]),
+                            temperature_2m_max: maxTemps[index],
+                            temperature_2m_min: minTemps[index],
+                            precipitation_probability_max: precipitation[index],
+                        };
+                    });
+        
+                    // Check for "data-date" on the span
+                    const targetDateAttr = span.getAttribute('data-date');
+                    let targetData;
+        
+                    if (targetDateAttr) {
+                        const targetDate = new Date(targetDateAttr);
+                        // Match by date only (ignore time)
+                        targetData = dailyData.find(d => 
+                            d.date.getFullYear() === targetDate.getFullYear() &&
+                            d.date.getMonth() === targetDate.getMonth() &&
+                            d.date.getDate() === targetDate.getDate()
+                        );
+                    }
+        
+                    // Fallback to today's data
+                    if (!targetData) {
+                        targetData = dailyData[0];
+                    }
+        
+                    const sunRise = targetData.sunrise.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+                    const sunSet = targetData.sunset.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+        
+                    span.innerHTML = `
+    <span style="display: inline-block; vertical-align: middle; line-height: 1rem; font-size: 0.6rem; text-align: left; margin-right: 0.5rem;">
+        H: ${targetData.temperature_2m_max}°<br>
+        L: ${targetData.temperature_2m_min}°
+    </span>
+    <span style="display: inline-block; vertical-align: middle; line-height: 1rem; font-size: 0.6rem; text-align: left; margin-right: 0.5rem;">
+        Sun Rise: ${sunRise}<br>
+        Sun Set:  ${sunSet}
+        </span>Percp: ${targetData.precipitation_probability_max}%
+    </span>
+`;
+
+
+        
+                } catch (error) {
+                    console.error("Error fetching weather data:", error);
+                    span.textContent = "Weather data unavailable";
+                }
+            }
+        }
+
+
+
+        // Call the function to update weather data
+        updateWeatherData();
+
+        /*
+        fetchWeather('ambee', latitude, longitude, '2025-04-13')
+            .then(data => {
+                console.log("Ambee Data:", data);
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+            });
+
+        fetchWeather('weatherbit', latitude, longitude)
+            .then(data => {
+                console.log("Weatherbit Data:", data);
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+            });
+        */
+
+    </script>
+</body>
+</html>
