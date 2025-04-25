@@ -9,24 +9,26 @@
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      background: url('harambe_in_the_clouds.png') no-repeat center center fixed;
-      background-size: cover;
       font-family: sans-serif;
       color: white;
+      overflow: hidden;
     }
 
-    footer {
+    body {
+      background: url('harambe_in_the_clouds.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    #video-bg {
       position: fixed;
-      bottom: 0;
+      top: 0;
       left: 0;
-      width: 100%;
-      height: 1.5rem;
-      background-color: #8B0000;
-      color: white;
-      text-align: center;
-      line-height: 1.5rem;
-      font-size: 0.9rem;
-      z-index: 1000;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      display: none;
     }
 
     .music-toggle {
@@ -47,6 +49,20 @@
       background: rgba(0, 0, 0, 0.7);
     }
 
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1.5rem;
+      background-color: #8B0000;
+      color: white;
+      text-align: center;
+      line-height: 1.5rem;
+      font-size: 0.9rem;
+      z-index: 1000;
+    }
+
     @media (max-width: 600px) {
       footer {
         font-size: 0.8rem;
@@ -61,13 +77,17 @@
 </head>
 <body>
 
-  <div style="padding: 2rem;">
+  <video id="video-bg" autoplay muted loop playsinline>
+    <source src="harambe_in_the_clouds.mp4" type="video/mp4">
+  </video>
+
+  <div style="padding: 2rem; position: relative; z-index: 1;">
     <h1 style="margin-top: 0;">Welcome to the Cloud</h1>
     <p>Where legends never die.</p>
   </div>
 
   <audio autoplay loop muted id="bg-music">
-    <source src="harambe_tribute.mp3" type="audio/mpeg">
+    <source src="harambe_theme.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
@@ -80,6 +100,7 @@
   <script>
     const audio = document.getElementById('bg-music');
     const toggleBtn = document.getElementById('music-toggle-btn');
+    const video = document.getElementById('video-bg');
 
     function updateButton() {
       toggleBtn.textContent = audio.paused || audio.muted ? '🔇 Unmute' : '🔊 Pause';
@@ -95,7 +116,6 @@
       updateButton();
     });
 
-    // First interaction to unmute autoplay audio
     window.addEventListener('click', () => {
       if (audio.muted) {
         audio.muted = false;
@@ -105,6 +125,13 @@
     }, { once: true });
 
     updateButton();
+
+    // Load video after background image is done loading
+    const bgImage = new Image();
+    bgImage.src = 'harambe_in_the_clouds.png';
+    bgImage.onload = () => {
+      video.style.display = 'block';
+    };
   </script>
 
 </body>
