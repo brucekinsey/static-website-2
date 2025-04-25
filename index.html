@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Harambe Tribute</title>
+  <title>Harambe in the Clouds</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      min-height: 100vh;
-      font-family: sans-serif;
-      color: white;
+      height: 100%;
       overflow: hidden;
     }
 
@@ -18,84 +16,60 @@
       background: url('harambe_in_the_clouds.png') no-repeat center center fixed;
       background-size: cover;
       position: relative;
+      font-family: sans-serif;
     }
 
-    #video-bg {
-      position: fixed;
+    video {
+      position: absolute;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      z-index: -1;
-      display: none;
+      z-index: 0;
+      opacity: 0;
+      transition: opacity 1s ease;
+      pointer-events: none;
     }
 
-    .music-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: rgba(0, 0, 0, 0.5);
-      border: none;
-      color: white;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      z-index: 1001;
+    #video-forward {
+      z-index: 1;
     }
 
-    .music-toggle:hover {
-      background: rgba(0, 0, 0, 0.7);
+    #video-reverse {
+      z-index: 2;
     }
 
     footer {
       position: fixed;
       bottom: 0;
-      left: 0;
       width: 100%;
       height: 1.5rem;
-      background-color: #8B0000;
+      background-color: darkred;
       color: white;
       text-align: center;
       line-height: 1.5rem;
-      font-size: 0.9rem;
-      z-index: 1000;
-    }
-
-    @media (max-width: 600px) {
-      footer {
-        font-size: 0.8rem;
-      }
-
-      .music-toggle {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
-      }
+      font-weight: bold;
+      font-size: 1rem;
+      z-index: 10;
     }
   </style>
 </head>
 <body>
-
-  <video id="video-bg" autoplay muted loop playsinline>
-    <source src="harambe_in_the_clouds.mp4" type="video/mp4">
-  </video>
+  <video id="video-forward" muted autoplay></video>
+  <video id="video-reverse" muted></video>
 
   <div style="padding: 2rem; position: relative; z-index: 1;">
     <h1 style="margin-top: 0;">Welcome to the Cloud</h1>
     <p>Where legends never die.</p>
   </div>
-
+  
   <audio autoplay loop muted id="bg-music">
     <source src="harambe_theme.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
-  <button class="music-toggle" id="music-toggle-btn">🔇 Unmute</button>
-
-  <footer>
-    Dicks out for Harambe
-  </footer>
+  <footer>Dicks out for Harambe</footer>
   
   <script>
     const audio = document.getElementById('bg-music');
@@ -127,39 +101,33 @@
     }, { once: true });
   
     updateButton();
-  
-    // Load video after image
-    const bgImage = new Image();
-    bgImage.src = 'harambe_in_the_clouds.png';
-    bgImage.onload = () => {
-      video.style.display = 'block';
-      video.play();
-    };
-  
-    // Disable native loop, we handle it manually
-    video.loop = false;
-  
-    // When video ends playing forward, reverse it
-    video.addEventListener('ended', () => {
-      if (playingForward) {
-        video.playbackRate = -1;
-        video.currentTime = video.duration - 0.001; // Jump to end - tiny offset
-        video.play();
-        playingForward = false;
-      }
-    });
-  
-    // When video hits start while reversing, flip back
-    video.addEventListener('timeupdate', () => {
-      if (!playingForward && video.currentTime <= 0.01) {
-        video.playbackRate = 1;
-        video.currentTime = 0.001;
-        video.play();
-        playingForward = true;
-      }
-    });
   </script>
 
+  <script>
+    const videoFwd = document.getElementById('video-forward');
+    const videoRev = document.getElementById('video-reverse');
 
+    videoFwd.src = 'harambe_in_the_clouds.mp4';
+    videoRev.src = 'harambe_in_the_clouds_reversed.mp4';
+
+    videoFwd.addEventListener('canplay', () => {
+      videoFwd.play();
+      videoFwd.style.opacity = 1;
+    });
+
+    videoFwd.addEventListener('ended', () => {
+      videoFwd.style.opacity = 0;
+      videoRev.currentTime = 0;
+      videoRev.play();
+      videoRev.style.opacity = 1;
+    });
+
+    videoRev.addEventListener('ended', () => {
+      videoRev.style.opacity = 0;
+      videoFwd.currentTime = 0;
+      videoFwd.play();
+      videoFwd.style.opacity = 1;
+    });
+  </script>
 </body>
 </html>
