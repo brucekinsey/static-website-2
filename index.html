@@ -30,9 +30,24 @@
       font-size: 1rem;
       border-radius: 0.5rem;
       cursor: pointer;
-      z-index: 12;
+      z-index: 1001;
     }
 
+    .music-toggle:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    @media (max-width: 600px) {
+      footer {
+        font-size: 0.8rem;
+      }
+
+      .music-toggle {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+    
     video {
       position: absolute;
       top: 0;
@@ -82,7 +97,9 @@
     <source src="harambe_tribute.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-
+  
+  <button class="music-toggle" id="music-toggle-btn">🔇 Unmute</button>
+  
   <footer>Dicks out for Harambe</footer>
   
   <script>
