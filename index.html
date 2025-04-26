@@ -19,6 +19,20 @@
       font-family: sans-serif;
     }
 
+    .music-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      z-index: 1001;
+        }
+
     video {
       position: absolute;
       top: 0;
@@ -59,7 +73,7 @@
   <video id="video-forward" muted autoplay></video>
   <video id="video-reverse" muted></video>
 
-  <div style="padding: 2rem; position: relative; z-index: 1;">
+  <div style="padding: 2rem; position: relative; z-index: 11;">
     <h1 style="margin-top: 0;">Welcome to the Cloud</h1>
     <p>Where legends never die.</p>
   </div>
